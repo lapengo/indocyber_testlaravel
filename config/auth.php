@@ -15,7 +15,8 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'Usertbl',
+        // 'passwords' => 'users',
     ],
 
     /*
@@ -38,7 +39,8 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'Usertbl',
+            // 'provider' => 'users',
         ],
 
         'api' => [
@@ -66,9 +68,13 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        // 'users' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\User::class,
+        // ],
+        'Usertbl' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Usertbl::class,
         ],
 
         // 'users' => [
@@ -93,8 +99,13 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        // 'users' => [
+        //     'provider' => 'users',
+        //     'table' => 'password_resets',
+        //     'expire' => 60,
+        // ],
+        'Usertbl' => [
+            'provider' => 'Usertbl',
             'table' => 'password_resets',
             'expire' => 60,
         ],

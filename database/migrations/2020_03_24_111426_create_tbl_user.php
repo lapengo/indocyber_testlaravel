@@ -19,6 +19,7 @@ class CreateTblUser extends Migration
             $table->string('password')->nullable($value = false);
             $table->string('nohp', 15)->nullable();
             $table->text('alamat')->nullable();
+            $table->string('remember_token')->nullable();
             // $table->timestamps();
         });
     }

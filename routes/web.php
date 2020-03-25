@@ -27,6 +27,10 @@ Route::get("/login", "LoginController@index");
 Route::get("/check", "LoginController@check"); 
 
 
-// Auth::routes();
+Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/test/forbidden', function(){
+    abort(403, "Anda tidak memiliki hak akses, Silahkan Lakukan Login!");
+});

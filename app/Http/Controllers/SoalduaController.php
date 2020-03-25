@@ -91,7 +91,7 @@ class SoalduaController extends Controller
 
         for ($i = 0; $i < count($this->arrUang); $i++) {
             if ($this->uangIbu % $this->arrUang[$i] < $this->uangIbu) {
-                echo "Uang " . $this->arrUang[$i] .  " = " . floor($this->uangIbu / $this->arrUang[$i])  . "<br/>";
+                echo "Uang " . $this->arrUang[$i] .  " = " . floor($this->uangIbu / $this->arrUang[$i]) . " Lembar" . "<br/>";
                     $this->uangIbu = $this->uangIbu % $this->arrUang[$i];
             }
         }

@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Soal 3 - Register</title>
+@extends('layouts.app')
 
-    
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-</head>
-<body>
+@section('content') 
     <div class="container">
         <h2>Edit - Produk {{$produk->nama_produk}}</h2>
         <hr>
@@ -51,6 +39,5 @@
           <input  class="btn btn-primary"  type="submit"  value="Save"/>
         </form>
       </div>
-      
-</body>
-</html>
+
+      @endsection

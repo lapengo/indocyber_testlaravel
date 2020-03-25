@@ -10,6 +10,12 @@ use App\Produk;
 
 class ProdukController extends Controller
 {
+
+    public function __construct()
+    {
+        $check = $this->middleware('auth'); 
+    }
+
     public function index()
     {
         $produk = Produk::paginate(10);
