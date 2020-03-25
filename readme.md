@@ -7,66 +7,73 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+## Soal Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Buatlah source code PHP yang menghasilkan data sebagai berikut:
+'+
+'- -
+'***
+'++++
+'-----
+'****
+'+++
+'- -
+'*
+ 
+2. Ibu ingin mengambil uang tabungan sejumlah Rp. 1.575.250,- yang dimilikinya di sebuah bank.
+Misalkan  pada  saat  itu  uang  pecahan  yang  berlaku  adalah  Rp.  100.000,-;  Rp. 50.000,-; Rp.20.000,-; Rp. 5.000,-; Rp. 100,- dan Rp. 50. Dengan menggunakan script PHP, tentukan banyaknya masing-masing uang pecahan yang diperoleh ibu tadi. 
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+ 
+Buatlah 2 buah tabel dengan spesifikasi berikut :
+1. tbl_user dengan kolom : id (primary key => auto increment), email, password, nohp, dan alamat
+2. tbl_produk dengan kolom : id (primary key => auto increment), nama_produk, image, harga,
+stock
+ 
+3. Dengan menggunakan framework laravel buatlah fungsi registrasi dan login (fungsi registrasi
+masuk ke dalam tbl_user dan fungsi login menggunakan kolom email dan password untuk
+loginnya), serta buatkan validasi untuk registrasinya seperti berikut:
+a. Email: ‘email harus valid’,’maximal char 50’ dan harus menggunakan format email ex :
+contoh@contoh.com (required)
+b. Password : (required) 
+* Minimal 6 char
+* uppercase characters (A – Z)
+* lowercase characters (a – z)
+* Base 10 digits (0 – 9)
+* Non-alphanumeric (Contoh: !, $, #, or %)
+* Unicode char 
+c. Nohp: ‘must a number’ (required)
+d. Konfirmasi password (harus sama dengan password)
+ 
+4. Setelah login, Buatkan satu menu untuk menampilkan list data produk (diambil dari
+tbl_produk) yang berisi no (urutan dimulai dari 1), image (diatur width dan heighnya agar
+bisa responsive), nama produk, stock, harga (gunakan format rupiah) dan aksi (berisi tombol 
+lihat, ubah dan hapus). Buatkan juga tombol tambah produk di atas list produk untuk fungsi
+menambahkan produk.
+ 
+5. Buatkan fungsi CRUD (creat, read, update delete) pada menu list produk tersebut dengan
+rincian :
+a. Ketika klik tombol tambah produk tampilan akan dialihkan ke tampilan form untuk
+menambahkan produk. Tampilan tersebut berisi nama produk, image, stock, dan
+harga. Buatkan juga validasinya sebagai berikut
+* Nama produk => required, tidak boleh sama dengan nama produk yang
+sudah ada
+* Image => required, maksimum size 5 mb, ekstensi yang diperbolehkan (jpg,
+jpeg, png)
+* Stock => required, only number
+* Harga => required, only number, dan menggunakan format rupiah
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+b. Ketika klik tombol lihat tampilkan akan dialihkan ke tampilan baru yang berisi detail
+dari produk tersebut, sediakan tombol kembali untuk kembali ke halaman list
+produk.
+ 
+ 
+c. Ketika klik tombol ubah, tampilan akan dialihkan ke tampilan ubah produk yang
+berisikan sama persis dengan tampilan tambah produk, validasi di ubah produk
+sama dengan tambah produk, sediakan tombol ubah dan tombol kembali
+ 
+d. Ketika klik tombol hapus, akan memunculkan alert notifikasi yang bertuliskan
+“apakah anda yakin ingin menghapus produk tersebut!”, ketika di klik oke data dari
+produk tersebut akan terhapus. 
+ 
+ 
+ 
