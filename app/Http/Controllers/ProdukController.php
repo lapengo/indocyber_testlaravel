@@ -22,19 +22,19 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
 
-        $validatedData = $this->validate($request,[
-            'nama_produk' => 'require|string|max:255',
-            'harga'       => 'require|numeric',
-            'stok'        => 'require|numeric',
-            'image'       => 'require',
-        ]);
-
-
-        if ($validatedData->fails()) {
-            return redirect('post/create')
-                ->withErrors($validatedData)
-                ->withInput();
-        }
+//        $validatedData = $this->validate($request,[
+//            'nama_produk' => 'require|string|max:255',
+//            'harga'       => 'require|numeric',
+//            'stok'        => 'require|numeric',
+//            'image'       => 'require',
+//        ]);
+//
+//
+//        if ($validatedData->fails()) {
+//            return redirect('post/create')
+//                ->withErrors($validatedData)
+//                ->withInput();
+//        }
 
 
         $new_produk = new Produk;
