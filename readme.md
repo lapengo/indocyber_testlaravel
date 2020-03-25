@@ -10,25 +10,22 @@
 ## Soal Laravel
 
 1. Buatlah source code PHP yang menghasilkan data sebagai berikut:
-+
-- -
-***
-++++
-- - - - -
-****
-+++
-- -
-*
+'+
+'- -
+'***
+'++++
+'-----
+'****
+'+++
+'- -
+'*
  
 2. Ibu ingin mengambil uang tabungan sejumlah Rp. 1.575.250,- yang dimilikinya di sebuah bank.
-Misalkan  pada  saat  itu  uang  pecahan  yang  berlaku  adalah  Rp.  100.000,-;  Rp. 50.000,-; Rp.
-20.000,-; Rp. 5.000,-; Rp. 100,- dan Rp. 50. Dengan menggunakan script PHP, tentukan
-banyaknya masing-masing uang pecahan yang diperoleh ibu tadi. 
+Misalkan  pada  saat  itu  uang  pecahan  yang  berlaku  adalah  Rp.  100.000,-;  Rp. 50.000,-; Rp.20.000,-; Rp. 5.000,-; Rp. 100,- dan Rp. 50. Dengan menggunakan script PHP, tentukan banyaknya masing-masing uang pecahan yang diperoleh ibu tadi. 
 
  
 Buatlah 2 buah tabel dengan spesifikasi berikut :
-1. tbl_user dengan kolom : id (primary key => auto increment), email, password, nohp, dan
-alamat
+1. tbl_user dengan kolom : id (primary key => auto increment), email, password, nohp, dan alamat
 2. tbl_produk dengan kolom : id (primary key => auto increment), nama_produk, image, harga,
 stock
  
@@ -38,12 +35,12 @@ loginnya), serta buatkan validasi untuk registrasinya seperti berikut:
 a. Email: ‘email harus valid’,’maximal char 50’ dan harus menggunakan format email ex :
 contoh@contoh.com (required)
 b. Password : (required) 
- Minimal 6 char
- uppercase characters (A – Z)
- lowercase characters (a – z)
- Base 10 digits (0 – 9)
- Non-alphanumeric (Contoh: !, $, #, or %)
- Unicode char 
+* Minimal 6 char
+* uppercase characters (A – Z)
+* lowercase characters (a – z)
+* Base 10 digits (0 – 9)
+* Non-alphanumeric (Contoh: !, $, #, or %)
+* Unicode char 
 c. Nohp: ‘must a number’ (required)
 d. Konfirmasi password (harus sama dengan password)
  
@@ -58,12 +55,12 @@ rincian :
 a. Ketika klik tombol tambah produk tampilan akan dialihkan ke tampilan form untuk
 menambahkan produk. Tampilan tersebut berisi nama produk, image, stock, dan
 harga. Buatkan juga validasinya sebagai berikut
- Nama produk => required, tidak boleh sama dengan nama produk yang
+* Nama produk => required, tidak boleh sama dengan nama produk yang
 sudah ada
- Image => required, maksimum size 5 mb, ekstensi yang diperbolehkan (jpg,
+* Image => required, maksimum size 5 mb, ekstensi yang diperbolehkan (jpg,
 jpeg, png)
- Stock => required, only number
- Harga => required, only number, dan menggunakan format rupiah
+* Stock => required, only number
+* Harga => required, only number, dan menggunakan format rupiah
 
 b. Ketika klik tombol lihat tampilkan akan dialihkan ke tampilan baru yang berisi detail
 dari produk tersebut, sediakan tombol kembali untuk kembali ke halaman list
