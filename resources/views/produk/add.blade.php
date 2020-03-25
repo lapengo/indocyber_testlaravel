@@ -17,14 +17,6 @@
         <h2>Form - Produk</h2>
         <hr>
 
-        @if(count($errors) > 0)
-				<div class="alert alert-danger">
-					@foreach ($errors->all() as $error)
-					{{ $error }} <br/>
-					@endforeach
-				</div>
-				@endif
-
         <a class="btn btn-info text-white btn-sm" href="{{route('produk.index')}}">Lihat Data Produk</a> <br><br>
           <form
             action="{{route('produk.store')}}"
@@ -49,15 +41,15 @@
 
           <div class="form-group">
             <label for="nama_produk">Nama Produk:</label>
-            <input type="text" value="{{old('nama_produk')}}" class="form-control {{$errors->first('nama_produk') ? "is-invalid" : ""}}" id="nama_produk" placeholder="Enter Nama Produk" name="nama_produk">
+            <input type="text" value="{{old('nama_produk')}}" class="form-control" id="nama_produk" placeholder="Enter Nama Produk" name="nama_produk">
           </div>
           <div class="form-group">
             <label for="harga">Harga:</label>
-            <input type="text" class="form-control" id="harga" placeholder="Enter Harga" name="harga">
+            <input type="text" value="{{old('harga')}}"  class="form-control" id="harga" placeholder="Enter Harga" name="harga">
           </div>
           <div class="form-group">
             <label for="stok">Stok:</label>
-            <input type="text" class="form-control" id="stok" placeholder="Enter Stok" name="stok">
+            <input type="text" value="{{old('stok')}}"  class="form-control" id="stok" placeholder="Enter Stok" name="stok">
           </div>
           <div class="form-group">
             <label for="image">Gambar:</label>

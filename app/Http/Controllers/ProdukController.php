@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+
 use App\Produk;
 
 class ProdukController extends Controller
@@ -22,36 +25,25 @@ class ProdukController extends Controller
     public function store(Request $request)
     {
 
-//        $validatedData = $this->validate($request,[
-//            'nama_produk' => 'require|string|max:255',
-//            'harga'       => 'require|numeric',
-//            'stok'        => 'require|numeric',
-//            'image'       => 'require',
-//        ]);
-//
-//
-//        if ($validatedData->fails()) {
-//            return redirect('post/create')
-//                ->withErrors($validatedData)
-//                ->withInput();
-//        }
+        \Validator::make($request->all(), [
+            'nama_produk' => 'required|unique:tbl_produk|string|max:255',
+            'harga'       => 'required|numeric|regex:/^[0-9]+$/',
+            'stok'        => 'required|numeric|regex:/^[0-9]+$/',
+            'image'       => 'required|mimes:(jpg,jpeg|max:5120',
+        ])->validate();
 
 
         $new_produk = new Produk;
-        $new_produk->nama_produk = $request->get('nama_produk');
-        // $new_produk->image = $request->get('image');
-        $new_produk->harga = $request->get('harga');
-        $new_produk->stok = $request->get('stok');
+        $new_produk->nama_produk    = $request->get('nama_produk'); 
+        $new_produk->harga          = $request->get('harga');
+        $new_produk->stok           = $request->get('stok');
 
 
         $cover = $request->file('image');
 
         if($cover){
-
             $tujuan_upload = 'produk-image';
             $cover->move($tujuan_upload,$cover->getClientOriginalName());
-
-            // $image_path =  $cover->store('produk-image', 'public');
             $new_produk->image = $cover->getClientOriginalName();
         }
 
@@ -78,13 +70,20 @@ class ProdukController extends Controller
     {
         $produk = Produk::findOrFail($id);
 
-        $produk->nama_produk = $request->get('nama_produk');
-        // $new_produk->image = $request->get('image');
-        $produk->harga = $request->get('harga');
-        $produk->stok = $request->get('stok');
+        
+        \Validator::make($request->all(), [
+            'nama_produk' => 'required|string|max:255',
+            'harga'       => 'required|numeric|regex:/^[0-9]+$/',
+            'stok'        => 'required|numeric|regex:/^[0-9]+$/',
+            'image'       => 'mimes:(jpg,jpeg|max:5120',
+        ])->validate();
 
 
-        $cover = $request->file('image');
+        $produk->nama_produk = $request->get('nama_produk'); 
+        $produk->harga       = $request->get('harga');
+        $produk->stok        = $request->get('stok');
+
+        $cover               = $request->file('image');
 
         if($cover){
             $image_path =  $cover->store('produk-image', 'public');
